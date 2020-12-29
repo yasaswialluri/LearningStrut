@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>  
+<package name="abc" extends="struts-default">  
+  
+<interceptors>  
+<interceptor name="upper" class="com.cg.MyInterceptor"></interceptor>  
+</interceptors>  
+  
+<action name="login" class="com.cg.Login">  
+<interceptor-ref name="defaultStack"></interceptor-ref>  
+<interceptor-ref name="upper"></interceptor-ref>  
+<result>welcome.jsp</result>  
+</action>  
+  
+</package>  
+</struts>      
